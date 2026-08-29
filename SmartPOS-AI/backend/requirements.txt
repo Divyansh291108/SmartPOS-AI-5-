@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pandas
+openpyxl
+python-multipart
+numpy
+python-jose[cryptography]
+anthropic
+bcrypt
