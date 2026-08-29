@@ -19,8 +19,10 @@ Callers (app.py) keep the token in st.session_state and pass it in.
 import os
 import pandas as pd
 import requests
+import streamlit as st
 
-API_BASE_URL = os.environ.get("SMARTPOS_API_URL", "http://localhost:8000").rstrip("/")
+#API_BASE_URL = os.environ.get("SMARTPOS_API_URL", "http://localhost:8000").rstrip("/")
+API_BASE_URL = st.secrets.get("API_BASE_URL", os.getenv("API_BASE_URL", "http://localhost:8000"))
 TIMEOUT = 30  # the assistant endpoint calls an LLM and can be slow
 
 
