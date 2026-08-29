@@ -122,11 +122,8 @@ if not st.session_state.token:
             st.rerun()
 
     st.caption(
-        "First time running this? The backend auto-creates an owner account on "
-        "startup — default `owner` / `changeme123` unless you set "
-        "`SMARTPOS_OWNER_USERNAME` / `SMARTPOS_OWNER_PASSWORD`. Change the "
-        "password before this ever runs anywhere but localhost."
-    )
+"Don't have an account? Ask your shop owner to create one for you.")
+    
     st.stop()
 
 token = st.session_state.token
