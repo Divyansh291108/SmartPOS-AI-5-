@@ -8,3 +8,4 @@ numpy
 python-jose[cryptography]
 anthropic
 bcrypt
+psycopg2
