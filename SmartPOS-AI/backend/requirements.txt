@@ -9,3 +9,4 @@ python-jose[cryptography]
 anthropic
 bcrypt
 psycopg2
+ollama
