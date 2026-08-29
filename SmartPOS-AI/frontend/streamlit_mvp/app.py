@@ -1,6 +1,7 @@
-from turtle import left
+
 
 import streamlit as st
+from turtle import left
 import pandas as pd
 import numpy as np
 import plotly.express as px
