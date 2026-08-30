@@ -717,7 +717,9 @@ elif page == "🧾 Billing (POS)":
         tx_df = pd.DataFrame()
 
     if not tx_df.empty:
-        summary_tbl = tx_df.groupby(["txn_id", "user", "payment_method"]).agg(
+        possible_cols = ["txn_id", "cashier", "user", "payment_method"]
+        group_cols = [c for c in possible_cols if c in tx_df.columns]
+        summary_tbl = tx_df.groupby(group_cols).agg(
             items=("qty", "sum"), total=("revenue", "sum")
         ).reset_index()
         st.dataframe(summary_tbl, width='stretch', hide_index=True)
