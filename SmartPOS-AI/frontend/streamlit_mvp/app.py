@@ -849,7 +849,7 @@ elif page == "🤖 AI Business Assistant":
 
     if not st.session_state.chat_history:
         st.info("👋 Try a quick question above, or type your own — e.g. *\"What should I reorder soon?\"*")
-        st.caption("Requires ANTHROPIC_API_KEY set on the backend — if you see an error, that's usually why.")
+        #.caption("Requires ANTHROPIC_API_KEY set on the backend — if you see an error, that's usually why.")
 
 # ----------------------------------------------------------------------------
 # PAGE: FRAUD & ALERTS
@@ -887,7 +887,7 @@ elif page == "🚨 Fraud & Alerts":
 
     st.caption(
         "Detection rules: 3+ refunds by the same cashier within 60 minutes, or 3+ discounts "
-        "of 20%+ by the same cashier in a day. Thresholds are set in backend/services/transactions.py."
+        "of 20%+ by the same cashier in a day."
     )
 
 # ----------------------------------------------------------------------------
@@ -957,15 +957,10 @@ elif page == "🔌 Data Source":
                     st.success(f"Created {result['role']} account: {result['username']}")
 
     with tab_backend:
-        st.markdown("The frontend no longer connects to a database directly — the backend does, "
-                     "and this app talks to it over HTTP with a bearer token.")
+        st.markdown("")
         st.code(f"SMARTPOS_API_URL = {api.API_BASE_URL}", language="text")
         st.markdown(
-            "- To point this app at a different backend (e.g. a deployed one), set the "
-            "`SMARTPOS_API_URL` environment variable before running `streamlit run app.py`.\n"
-            "- To change **which database the backend itself uses** (SQLite → Postgres), "
-            "edit `backend/database.py`.\n"
-            "- The AI Assistant needs `ANTHROPIC_API_KEY` set on the **backend**, not here."
+            ""
         )
         if st.button("🔄 Check backend connection"):
             st.success("Connected.") if api.is_healthy() else st.error("Unreachable.")
